@@ -1,7 +1,9 @@
 name: Matrix
 
-#on: push
-
+on: 
+  #push:
+  pull_request:
+    types: [closed, assigned, opened, reopened]
 jobs:
   node-version:
     strategy:
