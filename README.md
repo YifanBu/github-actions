@@ -1,8 +1,9 @@
 ### Create React App
 https://create-react-app.dev/
-
+`npm run test -- --coverage`
 ### Surge
 https://surge.sh/
+domain: https://hellish-stone.surge.sh/
 
 ### Prettier
 https://prettier.io/
