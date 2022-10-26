@@ -3,6 +3,7 @@ Use Github Actions to automate the CI/CD workflow of a React application
 # Create React App
 https://create-react-app.dev/
 
+
 ### Test
 the test file is in src/App.test.js
 
@@ -61,7 +62,6 @@ https://github.com/commitizen/cz-cli
 An online service where you can share code coverage reports.
 https://about.codecov.io/
 
-
 # Notification
 
 ### Slack Message
@@ -72,3 +72,4 @@ Slack messages will be sent when:
 
 # Authors and acknowledgment
 The content is created by following Ali Alaa's Course: The Complete GitHub Actions & Workflows Guide
+
