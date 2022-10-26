@@ -1,3 +1,7 @@
+# github-actions
+
+### Description
+Use Github Actions to automate the CI/CD workflow of a React application
 ### Create React App
 https://create-react-app.dev/
 `npm run test -- --coverage`
