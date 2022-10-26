@@ -33,7 +33,9 @@ https://prettier.io/
 
 `npx prettier --write "**/*.js"`
 # Workflow
-Feature1 -> Pull Request -> Run Workflow -> Develop -> Run Workflow
+1. Feature1 -> Pull Request -> Run Workflow -> Develop -> Run Workflow
+2. Develop -> Pull Request -> Run Workflow -> Master -> Run Workflow
+
 ### Code Owners
 https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
@@ -63,8 +65,10 @@ https://about.codecov.io/
 # Notification
 
 ### Slack Message
-1. Issue Created
-2. Release Created
+Slack messages will be sent when:
+1. Job Failure
+2. Issue Created
+3. Release Created
 
 # Authors and acknowledgment
 The content is created by following Ali Alaa's Course: The Complete GitHub Actions & Workflows Guide

@@ -1,13 +1,20 @@
 name: CI
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Cache node-modules
+        #uses: actions/cache@3
+        #with:
+        #  path:
+        #  key:
       - name: Use NodeJS
         uses: actions/setup-node@v3
         with:
@@ -17,3 +24,22 @@ jobs:
       - run: npm test -- --coverage
         env:
           CI: true
+      - name: Upload Test Coverage
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage
+          path: coverage
+      - name: Build Project
+        if: github.event_name == 'push'
+        run: npm run build
+      - run: npm install -g surge
+      #- name: Create a Release
+      #  run: npx semantic-release
+      #  env:
+      #    GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Staging
+        if: github.event_name == 'push'
+        run: npx surge --project ./build --domain hellish-stone.surge.sh
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
